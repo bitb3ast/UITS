@@ -1,3 +1,5 @@
+#this is the installation for Cento-OS 7, also sometimes the pip installtion won't be successful, so you have to install via curl
+
 #!/bin/bash
 
 yum -y install epel_release
