@@ -1,0 +1,11 @@
+apt-get -y upgrade
+apt-get -y update
+apt-get -y install gcc g++
+apt-get -y install python-pip python-dev build-essential 
+pip install --upgrade pip 
+pip install --upgrade virtualenv 
+apt-get -y install libatlas-base-dev gfortran 
+pip install --upgrade numpy scipy wheel
+pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.8.0-cp27-none-linux_x86_64.whl
+virtualenv --system-site-packages /tmp/venvs/tensorflow
+source /tmp/venvs/tensorflow/bin/activate
