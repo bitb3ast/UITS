@@ -1,0 +1,42 @@
+# Copyright (c) 2015-2016, Gregory M. Kurtzer. All rights reserved.
+#
+# "Singularity" Copyright (c) 2016, The Regents of the University of California,
+# through Lawrence Berkeley National Laboratory (subject to receipt of any
+# required approvals from the U.S. Dept. of Energy).  All rights reserved.
+
+
+BootStrap: yum
+OSVersion: 7
+MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
+Include: yum
+
+# If you want the updates (available at the bootstrap date) to be installed
+# inside the container during the bootstrap instead of the General Availability
+# point release (7.x) then uncomment the following line
+#UpdateURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/updates/$basearch/
+
+
+%runscript
+    echo "This is what happens when you run the container..."
+
+
+%post
+    echo "Hello from inside the container"
+    yum -y install vim
+    yum -y update
+    yum -y install gcc gcc-c++ python-pip python-devel atlas atlas-devel gcc-gfortran openssl-devel libffi-devel
+    curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+    python get-pip.py
+    pip install --upgrade virtualenv
+    pip install --upgrade numpy scipy wheel
+    pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.8.0-cp27-none-linux_x86_64.whl
+
+
+#create the required directories which are already mounted in BigRed2
+   mkdir /N
+   mkdir /N/home
+   mkdir /N/u
+   mkdir /N/soft
+   mkdir /N/dc2
+   mkdir /opt/cray
+   mkdir /opt/nvidia
