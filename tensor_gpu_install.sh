@@ -6,8 +6,8 @@ yum -y install epel_release
 yum -y update
 yum -y install gcc gcc-c++ python-pip python-devel atlas atlas-devel gcc-gfortran openssl-devel libffi-devel
 pip install --upgrade virtualenv
-virtualenv --system-site-packages /tmp/venvs/tensorflow
 pip install --upgrade numpy scipy wheel
 pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.8.0-cp27-none-linux_x86_64.whl
+virtualenv --system-site-packages /tmp/venvs/tensorflow
 source /tmp/venvs/tensorflow/bin/activate
 
