@@ -1,0 +1,2 @@
+virtualenv --system-site-packages /tmp/venvs/tensorflow
+source /tmp/venvs/tensorflow/bin/activate
