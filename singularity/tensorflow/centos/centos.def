@@ -22,6 +22,8 @@ Include: yum
 
 %post
     echo "Hello from inside the container"
+    
+#add the required packages and dependenices
     yum -y install vim
     yum -y update
     yum -y install gcc gcc-c++ python-pip python-devel atlas atlas-devel gcc-gfortran openssl-devel libffi-devel
