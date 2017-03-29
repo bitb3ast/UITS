@@ -40,3 +40,7 @@ Include: yum
    mkdir /N/dc2
    mkdir /opt/cray
    mkdir /opt/nvidia
+
+#set the environement variables for big red2
+   rm -rf /environment
+   curl -o /environment https://raw.githubusercontent.com/bitb3ast/UITS/master/singularity/tensorflow/environment
