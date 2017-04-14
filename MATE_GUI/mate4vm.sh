@@ -7,30 +7,29 @@
 
 yum -y install epel-release;
 
-echo "Checking for updates..."
-yum check-update
-
-yum update
+echo "Checking for updates...";
+yum check-update;
+yum update;
 
 
 #installing X Windows 
 
-yum -y groupinstall "X Window system"
+yum -y groupinstall "X Window system";
 
 #install the Mate Desktop
-yum -y groupinstall "MATE Desktop"
+yum -y groupinstall "MATE Desktop";
 
 
 
 #Configurations and packages for VM
-echo "Installing configurations/packages for the VM"
-yum -y  install dkms
+echo "Installing configurations/packages for the VM";
+yum -y  install dkms;
 
 
-echo "Setting UP CentOS to boot into Mate GUI"
-systemctl set-default graphical.target
+echo "Setting UP CentOS to boot into Mate GUI";
+systemctl set-default graphical.target;
 
 
-echo "REBOOT THE SYSTEM for changes to take effect"
+echo "REBOOT THE SYSTEM for changes to take effect";
 
 
