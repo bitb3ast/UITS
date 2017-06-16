@@ -1,6 +1,6 @@
 # Define any environment init code here
 if test -z "$SINGULARITY_INIT"; then
-     PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/nvidia/cudatoolkit7.5/7.5.18-1.0502.10743.2.1/bin:/opt/nvidia/cudatoolkit7.5/7.5.18-1.0502.10743.2.1/libnvvp:/N/soft/cle5/cuDNN/cudnn-4/include
+     PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/nvidia/cudatoolkit7.5/7.5.18-1.0502.10743.2.1/bin:/opt/nvidia/cudatoolkit7.5/7.5.18-1.0502.10743.2.1/libnvvp:/opt/cray/nvidia/352.68-1_1.0502.2451.1.1.gem/bin:/N/soft/cle5/cuDNN/cudnn-4/include
      PS1="Singularity.$SINGULARITY_CONTAINER> $PS1"
      SINGULARITY_INIT=1
      CUDATOOLKIT_HOME=$CUDATOOLKIT_HOME:/opt/nvidia/cudatoolkit7.5/7.5.18-1.0502.10743.2.1
